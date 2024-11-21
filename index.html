@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JANKI.</title>
+  <style>
+    * {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: rgb(255, 255, 255);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: rgb(0, 0, 0);
+      margin: 0;
+    }
+
+    .nav-cover {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      background-color: rgba(255, 255, 255, 0.751);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgb(198, 198, 198);
+      padding: 0 10px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0 auto;
+      max-width: 1200px;
+    }
+
+    nav a{
+      color: black;
+      text-decoration: none;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      list-style: none;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: rgb(85, 85, 85);
+      font-weight: 300;
+      margin: 0 20px;
+    }
+
+    ::-webkit-scrollbar {
+      width: 5px;
+      height: 0;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: #f1f1f100;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: #c5c5c5;
+      border-radius: 10px;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+
+    .contact-btn {
+      background-color: rgb(0, 0, 0);
+      color: white;
+      padding: 5px 20px;
+      border-radius: 10px;
+
+    }
+
+    footer {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 30px;
+      border-radius: 30px;
+      background: radial-gradient(circle, rgb(255, 245, 173) 0%, rgba(0, 0, 0, 0) 60%);
+      /* Add animation property here */
+      animation: animate-shape 2s ease-in-out infinite alternate;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.152);
+    }
+
+    @keyframes animate-shape {
+      from {
+        background-position: center;
+        /* Start with center position */
+      }
+
+      to {
+        background-position: right bottom;
+        /* Move to bottom right corner */
+      }
+    }
+
+    .footer {
+      animation: animate-shape 2s ease-in-out infinite alternate;
+    }
+
+    footer h1 {
+      margin-top: 70px;
+    }
+
+    .footer-icons a {
+      margin: 0 5px;
+      padding: 10px;
+      border: 1px solid black;
+      border-radius: 30px;
+      aspect-ratio: 1;
+      height: 20px;
+      width: 20px;
+    }
+
+    footer button {
+      background-color: black;
+      color: rgb(255, 255, 255);
+      padding: 8px 16px;
+      border-radius: 30px;
+      border: none;
+      outline: none;
+      cursor: pointer;
+    }
+
+    footer a {
+      text-decoration: none;
+      color: #000000;
+    }
+
+    footer img {
+      height: 20px;
+    }
+
+    .footer-contacts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    footer h1 {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-weight: 100;
+      font-size: 40px;
+      margin: 20px 0;
+    }
+
+    .footer-contacts .faded-txt {
+      margin-top: 10px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .hero-img {
+      width: 100%;
+    }
+
+    .search {
+      display: flex;
+      width: 100%;
+      background-color: white;
+      box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.108);
+    }
+
+    .heading {
+      font-size: 3rem;
+      font-weight: 600;
+      margin: 40px 0;
+    }
+
+    .search input {
+      width: 100%;
+      border: none;
+      outline: none;
+      padding: 20px;
+      font-size: 1.1rem;
+      font-weight: 300;
+    }
+
+    .search button {
+      border: none;
+      outline: none;
+      background-color: rgb(135, 192, 135);
+      padding: 20px;
+      font-size: 1.1rem;
+      font-weight: 300;
+      cursor: pointer;
+    }
+
+    main {
+      display: none;
+      margin: 0 10px;
+    }
+
+    main.active {
+      display: block;
+    }
+
+    .companies-worked-with {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 700px;
+      margin: 15vh auto;
+    }
+
+    .companies-worked-with img {
+      width: 25%;
+      filter: grayscale(1);
+    }
+
+    .home-content-test {
+      max-width: 900px;
+      margin: 100px auto;
+      text-align: center;
+    }
+
+    .home-content-test h2 {
+      font-weight: 300;
+      font-size: 35px;
+      margin: 0;
+    }
+
+    .home-content-test p {
+      font-weight: 100px;
+      opacity: 0.6;
+      text-align: justify;
+    }
+
+    .home-content-test span {
+      color: rgb(0, 123, 255);
+    }
+
+    .home-desc-test {
+      max-width: 800px;
+      margin: 100px auto;
+      text-align: center;
+    }
+
+    .home-desc-test h2 {
+      font-weight: 300;
+      font-size: 35px;
+      margin: 0;
+    }
+
+    .home-desc-test p {
+      font-weight: 100px;
+      font-size: 20px;
+      opacity: 0.5;
+    }
+
+    .home-desc-test span {
+      color: rgb(0, 123, 255);
+    }
+
+    .home-grid-prime {
+      display: grid;
+      grid-template-columns: 5fr 4fr;
+      gap: 5px;
+      margin: 50px auto;
+      max-width: 900px;
+    }
+
+    .home-grid-sec {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 5px;
+    }
+
+    .home-grid-tri {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      gap: 5px;
+    }
+
+    .home-grid-prime .radi30 {
+      border-radius: 30px;
+      padding: 30px 20px;
+
+      box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .trstd-urs {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background-color: #E19053;
+      color: white;
+    }
+
+    .trstd-urs img {
+      height: 30px;
+      border-radius: 50%;
+      margin-right: -10px;
+      border: 2px solid #E19053;
+    }
+
+    .trstd-urs h1 {
+      font-size: 30px;
+      font-weight: 100;
+    }
+
+    .rtn-cstmr {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background-color: #b5b5b5;
+      color: white;
+    }
+
+    .rtn-cstmr img {
+      height: 30px;
+      border-radius: 50%;
+      margin-right: -10px;
+      border: 2px solid #b5b5b5;
+    }
+
+    .rtn-cstmr h1 {
+      font-size: 30px;
+      font-weight: 100;
+    }
+
+    .wht-we-do {
+      background-image: url('https://img.freepik.com/free-photo/satisfied-pleased-young-woman-promots-product-gives-recommendation-stands-with-broad-smile-against-yellow-wall-take-look-there-european-female-turns-your-attention-banner_273609-42884.jpg?t=st=1723619907~exp=1723623507~hmac=b90df8c24888350c4e8237ca2feeef6fd1d026e86783ca74ac32bba4b7710297&w=1380');
+      background-size: cover;
+      color: #000000c4;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .wht-we-do h2 {
+      font-size: 23px;
+      font-weight: 100;
+    }
+
+    .protection-icon {
+      background-color: white;
+      border-radius: 50%;
+      aspect-ratio: 1;
+      height: 40px;
+      padding: 5px;
+    }
+
+    .circule3 {
+      height: 60px;
+      opacity: 0.7;
+    }
+
+    .wider-banner {
+      background-color: rgb(254, 255, 243);
+      background-image: url('https://gallery.yopriceville.com/var/thumbs/Free-Clipart-Pictures/Hands-PNG/Hand_with_Telephone_PNG_Clipart_Image.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      display: flex;
+      justify-content: right;
+    }
+
+    .descriptions-again {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      max-width: 900px;
+      margin: 100px auto;
+      gap: 10px;
+    }
+
+    .descriptions-again h1 {
+      font-weight: 100;
+    }
+
+    .descriptions-again p {
+      color: rgba(0, 0, 0, 0.5);
+      font-size: 14px;
+      font-weight: 100;
+      line-height: 24px;
+    }
+
+
+    .all-services-card {
+      display: flex;
+      max-width: 950px;
+      margin: 10px auto 100px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .service-header {
+      display: flex;
+      justify-content: space-between;
+      max-width: 900px;
+      margin: 100px auto;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    .service-header h1 {
+      font-size: 50px;
+      margin: 0;
+      font-weight: 100;
+    }
+
+    .service-header p {
+      max-width: 350px;
+      font-size: 14px;
+    }
+
+    .service-card {
+      border-radius: 30px;
+      height: 30vh;
+      aspect-ratio: 7/10;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin: 10px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      box-shadow: -5px -1px 10px rgba(0, 0, 0, 0.455);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+      background: linear-gradient(-45deg, #eecdc2, #f4adc8, #a1daee, #a1e7d6);
+      background-size: 400% 400%;
+      -webkit-animation: gradient 15s ease infinite;
+      animation: gradient 15s ease infinite;
+    }
+
+    .service-card:hover {
+      transform: scale(1.03);
+      /* Scales the card to 110% of its size */
+      box-shadow: -5px -1px 15px rgba(0, 0, 0, 0.6);
+      /* Optional shadow enhancement */
+    }
+
+
+    @-webkit-keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .service-title {
+      background-color: white;
+      border-radius: 15px;
+      padding: 10px 25px;
+      width: max-content;
+      margin: 0;
+      font-size: 18px;
+    }
+
+    .service-card-foot p {
+      font-weight: 300;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    .service-card-foot button {
+      background-color: transparent;
+      border: none;
+      outline: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .service-card-foot img {
+      mix-blend-mode: multiply;
+      height: 50px;
+    }
+
+    .site-components {
+      display: flex;
+      justify-content: space-between;
+      max-width: 950px;
+      margin: 0 auto;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    .servicesSearch {
+      display: flex;
+      align-items: center;
+      border: 1px solid black;
+      border-radius: 15px;
+      padding: 2px;
+      margin: 0 auto;
+    }
+
+    .servicesSearch input {
+      border: none;
+      outline: none;
+      background: transparent;
+      width: 100%;
+      transition: width 1s ease;
+    }
+
+    .servicesSearch input:focus {
+      width: 300px;
+    }
+
+    .servicesSearch button {
+      border: none;
+      outline: none;
+      background: transparent;
+      cursor: pointer;
+    }
+
+
+    #about-us {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    .about-us-header {
+      height: calc(100vh - 100px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .about-us-header h1 {
+      font-size: 50px;
+      font-weight: 200;
+    }
+
+    .about-us-header p span {
+      color: #00000079;
+    }
+
+    .about-heading {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .about-heading h1 {
+      font-size: 30px;
+      font-weight: 200;
+    }
+
+    .about-heading p {
+      font-size: 16px;
+      text-align: center;
+      color: #00000092;
+    }
+
+    .desc-about-us {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      max-width: 1000px;
+      margin: 0 auto;
+      align-items: center;
+    }
+
+    .desc-about-us img {
+      width: 100%;
+    }
+
+    .desc-about-us button {
+      background-color: transparent;
+      border: 1px solid rgb(0, 149, 255);
+      color: rgb(0, 149, 255);
+      padding: 8px 20px;
+      border-radius: 10px;
+    }
+
+    .desc-about-us p {
+      font-size: 14px;
+      color: #00000092;
+    }
+
+    .value-card {
+      background-color: #f3f3f3;
+      border-radius: 20px;
+      padding: 10px;
+      margin: 10px 0;
+    }
+
+    .value-card img {
+      background-color: white;
+      border-radius: 10px;
+      height: 40px;
+      width: 40px;
+      padding: 10px;
+      margin-top: -30px;
+      margin-left: 20px;
+
+    }
+
+    .value-card h1 {
+      font-size: 20px;
+      font-weight: 300;
+    }
+
+    .about-process-sec button {
+      background-color: transparent;
+      border: 1px solid rgb(0, 149, 255);
+      color: rgb(0, 149, 255);
+      padding: 15px 25px;
+      border-radius: 10px;
+    }
+
+    .about-process-sec img {
+      margin: 20px 0;
+      border-radius: 20px;
+    }
+
+    .process-card {
+      display: flex;
+      margin: 20px 0;
+    }
+
+    .process-card img {
+      height: 40px;
+      width: min-content;
+      margin-right: 10px;
+      background-color: rgb(236, 236, 236);
+      padding: 5px;
+      border-radius: 20px;
+    }
+
+    .process-card h1 {
+      margin: 0;
+      font-weight: 300;
+    }
+
+    @media screen and (max-width: 700px) {
+      .home-grid-prime {
+        grid-template-columns: 1fr;
+      }
+
+      .Invisibility-mode {
+        display: none;
+      }
+
+      .home-grid-tri {
+        grid-template-rows: 1fr;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card {
+        height: max-content;
+        aspect-ratio: 2;
+      }
+
+      .service-title {
+        width: auto;
+      }
+
+      .desc-about-us {
+        display: block;
+      }
+
+      nav ul {
+        flex-direction: column;
+      }
+
+      .dropdown-content{
+        padding: 0;
+        margin: 0;
+      }
+
+      .dropdown {
+        border-left: 1px solid rgb(217, 217, 217);
+        background-color: rgb(255, 255, 255);
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        transition: width 0.3s ease;
+        overflow: hidden;
+        width: 0;
+        /* Initial collapsed state */
+      }
+
+      .dropdown.open {
+        width: 250px;
+        /* Desired expanded width */
+        display: block;
+        /* Ensure it's visible */
+      }
+
+      nav {
+        height: 60px;
+      }
+
+      .burger-menu {
+        aspect-ratio: 1.45;
+        width: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .burger-menu span {
+        border: 1.5px solid black;
+        border-radius: 10px;
+      }
+
+      .bar1 {
+        margin-right: 10px;
+      }
+
+      .bar3 {
+        margin-left: 10px;
+      }
+      nav ul li{
+        width: 100%;
+      }
+
+      nav ul li a{
+        width: calc(100% - 30px);
+        margin: 5px;
+        padding: 10px;
+        border-radius: 10px;
+        outline: none;
+        border: 1px solid black;
+        display: flex;
+        align-items: center;
+      }
+
+      .contact-btn{
+
+        width: calc(100% - 30px);
+        margin: 5px;
+        padding: 10px;
+        border-radius: 10px;
+        outline: none;
+        background-color: rgb(0, 0, 0);
+        display: flex;
+        align-items: center;
+        border: none;
+        color: white;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="nav-cover">
+    <nav>
+      <a href="#home"><h1 style="font-size: 2rem; font-weight: 500;">JANKI.</h1></a>
+      <div class="burger-menu" onclick="toggleDropdown()">
+        <span class="bar1"></span>
+        <span class="bar2"></span>
+        <span class="bar3"></span>
+      </div>
+      <div id="dropdown" class="dropdown">
+        <ul class="dropdown-content">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#service">Services</a></li>
+            <li><a href="#about-us">About Us</a></li>
+          <li><a href="#contact-us" class="contact-btn">Contact Us</a></li>
+        </ul>
+      </div>      
+    </nav>
+  </div>
+
+  <script>
+function toggleDropdown() {
+  const dropdown = document.getElementById('dropdown');
+  dropdown.classList.toggle('open');
+}
+
+// Close the dropdown if clicked outside or on a link
+document.addEventListener('click', (event) => {
+  const dropdown = document.getElementById('dropdown');
+  const burgerMenu = document.querySelector('.burger-menu');
+  const isClickInside = dropdown.contains(event.target) || burgerMenu.contains(event.target);
+
+  if (!isClickInside) {
+    dropdown.classList.remove('open');
+  }
+});
+
+// Scroll to top and close the menu when a link is clicked
+document.querySelectorAll('.dropdown-content a').forEach((link) => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault(); // Prevent default navigation
+    window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top smoothly
+    document.getElementById('dropdown').classList.remove('open'); // Close the menu
+  });
+});
+  </script>
+
+
+  <main id="home" class="active">
+    <div class="hero" id="hero-section">
+      <div style="display: flex; align-items: center;">
+        <img src="asset/bijnessman.jpg" class="hero-img" alt="">
+      </div>
+      <div style="display: flex; align-items: center;">
+        <div class="service">
+          <p class="heading">MICE &<br>Compliances</p>
+          <img src="asset/Untitled_design-removebg-preview.png" style="width: 100%;" alt="">
+          <div class="search">
+            <input type="search" name="search" id="search" placeholder="Search...">
+            <button>GO</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="companies-worked-with">
+      <img src="https://static.uacdn.net/production/_next/static/images/logo.svg" alt="">
+      <img src="https://cdn1.byjus.com/byjusweb/img/home/svg/byjus_logo.svg" alt="">
+      <img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20210420155809/gfg-new-logo.png" alt="">
+    </div>
+
+    <div class="home-desc-test">
+      <h2>Your Partner in Event <span>Excellence</span></h2>
+      <p>JANKI Creations delivers expert event management, from conferences to corporate solutions, ensuring
+        seamless execution and memorable experiences.
+      </p>
+    </div>
+
+    <div class="home-grid-prime">
+      <div class="home-grid-sec">
+        <div class="wht-we-do radi30">
+          <div>
+            <img class="protection-icon" src="https://www.svgrepo.com/show/415176/protection-secure-security.svg"
+              alt="">
+            <h2>What we do</h2>
+            <p>We create moments that last forever</p>
+          </div>
+          <div>
+            <img class="circule3" src="https://www.svgrepo.com/show/365254/circles-three-thin.svg" alt="">
+          </div>
+        </div>
+        <div style="display: grid; grid-template-rows: 1fr 1fr; gap: 5px;">
+          <div class="trstd-urs radi30">
+            <div>
+              <div style="display: flex; width: min-content; margin-left: auto;">
+                <div><img src="https://pics.craiyon.com/2023-10-22/b13ddfc12799436e87ede837cc8b628c.webp" alt=""></div>
+                <div><img src="https://media.tenor.com/rU9qRhN5DHoAAAAM/mega-prince-varuntej-from-f3-movie-varuntej.gif"
+                    alt=""></div>
+                <div
+                  style="background-color: black; aspect-ratio: 1;height: 30px; border-radius: 50%;border: 2px solid #E19053; color: wheat; font-size: 10px;display: flex;align-items: center; justify-content: center;">
+                  700+</div>
+              </div>
+            </div>
+            <div>
+              <h1>700+</h1>
+            </div>
+            <div>Trusted Clints</div>
+          </div>
+          <div class="rtn-cstmr radi30">
+            <div>
+              <div style="display: flex; width: min-content; margin-left: auto;">
+                <div><img src="https://pics.craiyon.com/2023-10-22/b13ddfc12799436e87ede837cc8b628c.webp" alt=""></div>
+                <div><img src="https://media.tenor.com/rU9qRhN5DHoAAAAM/mega-prince-varuntej-from-f3-movie-varuntej.gif"
+                    alt=""></div>
+                <div><img src="https://i.pinimg.com/564x/a4/9e/18/a49e18a6c059795a878b6b0366e7211b.jpg" alt=""></div>
+              </div>
+            </div>
+            <div>
+              <h1>300+</h1>
+            </div>
+            <div>Regular Clints</div>
+          </div>
+        </div>
+      </div>
+      <div class="home-grid-tri">
+        <div class="Invisibility-mode"></div>
+        <div class="wider-banner radi30">
+          <div style="max-width: 170px;">
+            <nav style=" display: flex; justify-content: right;"><a href="#contact-us"><button
+                  style="background: transparent; border: 1px solid rgba(0, 0, 0, 0.457); border-radius: 30px; padding: 8px 20px;">Contact
+                  us</button></a></nav>
+            <p>Start with connecting to us how about that?</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="descriptions-again">
+      <h1>Provide the best service with out of the box ideas</h1>
+      <p>Janki Creations is a dynamic event management agency specializing in creating impactful experiences for
+        corporate events, healthcare professional (HCP) engagements, and MICE (Meetings, Incentives,
+        Conferences, and Exhibitions). We combine creativity, precision, and innovative technology to deliver
+        seamless and memorable events. From concept to execution, our tailored solutions integrate advanced
+        tools and sustainable practices, ensuring every event is engaging, inclusive, and aligned with our
+        clients’ goals.
+      </p>
+    </div>
+
+    <div class="home-content-test">
+      <h2>Crafting Moments, Creating <span> Memories</span></h2>
+      <p>
+        At Janki Creations, we believe that every event is more than just an occasion—it’s an opportunity to
+        craft unforgettable moments that resonate long after they’re over. Our passion lies in creating
+        experiences that bring people together, inspire connections, and leave a lasting impression.
+        <br><br>
+        Through innovative solutions, meticulous planning, and a dedication to excellence, we transform visions
+        into reality. Whether it’s a corporate gathering, a healthcare professional engagement, or a milestone
+        celebration, every detail is thoughtfully curated to ensure a seamless and impactful experience.
+        <br><br>
+        By blending creativity with precision and leveraging technology to enhance every step, we ensure that
+        the moments we craft become cherished memories for our clients and their audiences. At Janki Creations,
+        we don’t just plan events—we create legacies.
+      </p>
+    </div>
+  </main>
+
+  <main id="service">
+    <div class="service-header">
+      <h1>Quality Services<br>You Can Get</h1>
+      <p>We provide a wide range of health services. Covering all of your compliance needs.</p>
+    </div>
+
+    <div class="site-components">
+      <form class="servicesSearch">
+        <input type="search" id="searchInput" placeholder="Search..." autocomplete="off">
+        <button type="button" id="searchButton">
+          <img src="https://www.svgrepo.com/show/522266/search.svg" height="20px" alt="">
+        </button>
+      </form>
+    </div>
+
+    <div class="all-services-card" id="servicesContainer"></div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+  const servicesContainer = document.getElementById('servicesContainer');
+  const searchInput = document.getElementById('searchInput');
+  let servicesData = []; // To store fetched services data
+
+  // Fetch the JSON data
+  fetch('services.json')
+    .then(response => response.json())
+    .then(data => {
+      servicesData = data; // Store data in a global variable
+      renderServices(servicesData); // Render services initially
+    })
+    .catch(error => console.error('Error fetching the JSON data:', error));
+
+  // Function to render services
+  function renderServices(services) {
+    servicesContainer.innerHTML = ''; // Clear existing services
+    services.forEach(service => {
+      const serviceCard = document.createElement('div');
+      serviceCard.classList.add('service-card');
+
+      if (service.image) {
+        serviceCard.style.backgroundImage = `url('${service.image}')`;
+      }
+
+      const serviceTitle = document.createElement('p');
+      serviceTitle.classList.add('service-title');
+      serviceTitle.textContent = service.title;
+
+      const serviceCardFoot = document.createElement('div');
+      serviceCardFoot.classList.add('service-card-foot');
+
+      const description = document.createElement('p');
+      description.textContent = service.description;
+
+      // Create nav and link
+      const nav = document.createElement('nav'); // Create nav element
+      const link = document.createElement('a');
+      link.href = "#contact-us"; // Add your link here
+      link.classList.add('dynamic-link'); // Add a class to identify dynamic links
+
+      const img = document.createElement('img');
+      img.src = "asset/up-right.svg";
+      img.alt = "";
+
+      link.appendChild(img);
+      nav.appendChild(link); // Append link to nav
+
+      // Append elements to serviceCardFoot
+      serviceCardFoot.appendChild(description);
+      serviceCardFoot.appendChild(nav); // Append nav to serviceCardFoot
+
+      // Append title and foot to service card
+      serviceCard.appendChild(serviceTitle);
+      serviceCard.appendChild(serviceCardFoot);
+
+      // Append service card to the container
+      servicesContainer.appendChild(serviceCard);
+    });
+
+    // Reattach event listeners for dynamic links
+    attachNavClickListeners();
+  }
+
+  // Add event listener for search input
+  searchInput.addEventListener('input', () => {
+    const searchTerm = searchInput.value.toLowerCase();
+    const filteredServices = servicesData.filter(service =>
+      service.title.toLowerCase().includes(searchTerm) ||
+      service.description.toLowerCase().includes(searchTerm)
+    );
+    renderServices(filteredServices); // Render filtered services
+  });
+
+  // Function to handle navigation clicks
+  function attachNavClickListeners() {
+    // Get all navigation links, including dynamically created ones
+    const navLinks = document.querySelectorAll('nav a');
+
+    // Add click event listeners to each link
+    navLinks.forEach(link => {
+      link.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent default link behavior
+
+        // Get the target main section ID
+        const targetId = this.getAttribute('href').substring(1);
+
+        // Hide all main sections
+        document.querySelectorAll('main').forEach(section => {
+          section.classList.remove('active');
+        });
+
+        // Show the target main section
+        document.getElementById(targetId).classList.add('active');
+
+        // Scroll to the top
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth' // Optional: adds a smooth scrolling effect
+        });
+      });
+    });
+  }
+
+  // Initial attachment for any pre-existing links
+  attachNavClickListeners();
+});
+
+    </script>
+  </main>
+
+  <main id="about-us">
+    <div class="about-us-header">
+      <h1>About Us</h1>
+      <p>Home / <span>About us</span></p>
+    </div>
+    <div class="about-heading">
+      <h1>About Us</h1>
+      <p>As an Event Management Partner, we are dedicated to crafting exceptional experiences<br>that drive your
+        business forward.</p>
+    </div>
+    <div class="desc-about-us">
+      <img src="https://i.pinimg.com/564x/71/1e/c7/711ec78cc8841456632f68587d2543cc.jpg" alt="">
+      <div>
+        <p>At JANKI Creations, we specialize in crafting personalized event management solutions that elevate
+          your brand and drive success. Our team of experienced planners, coordinators, and creative
+          strategists work together to deliver exceptional conferences, product launches, and corporate events
+          tailored to your unique needs.
+          <br><br>
+          Our mission is to empower businesses by creating impactful experiences that resonate with their
+          audience. We are committed to staying ahead of industry trends and utilizing the latest technologies
+          to ensure the highest quality in every event we manage. We believe that every business deserves
+          events that reflect their brand's essence and effectively communicate their message.
+        </p>
+        <nav><a href="#contact-us"><button>Get in touch</button></a></nav>
+      </div>
+    </div>
+    <div class="about-heading">
+      <h1>Why choose us</h1>
+      <p>Thank you for considering us as your event management partner. We believe our expertise, attention to
+        detail, and<br>commitment to excellence make us the ideal choice for your next project.</p>
+    </div>
+    <div class="desc-about-us">
+      <div class="value-card">
+        <img src="https://www.svgrepo.com/show/427621/confidence-confident-dignity.svg" class="smbl" alt="">
+        <h1>Experties</h1>
+        <p>With extensive experience in planning and executing events across diverse industries, we bring
+          unparalleled expertise to every project. </p>
+      </div>
+      <div class="value-card">
+        <img src="https://www.svgrepo.com/show/463934/approved-file-3.svg" class="smbl" alt="">
+        <h1>Attention to Detail</h1>
+        <p>We take pride in our work, meticulously focusing on every detail to ensure that each event we manage
+          is executed with the highest level of quality.</p>
+      </div>
+      <div class="value-card">
+        <img src="https://www.svgrepo.com/show/325875/communication.svg" class="smbl" alt="">
+        <h1>Communication</h1>
+        <p>We believe that clear and consistent communication is essential for the success of every event we
+          manage.</p>
+      </div>
+      <div class="value-card">
+        <img src="https://www.svgrepo.com/show/28763/24-hours-phone-attention-service.svg" class="smbl" alt="">
+        <h1>Customer Service</h1>
+        <p>As an event management team, we understand the importance of building long-term relationships with
+          our clients.</p>
+      </div>
+    </div>
+
+    <div class="desc-about-us" style="align-items: baseline; margin: 20px auto;">
+      <div class="about-process-sec">
+        <h1>Process</h1>
+        <p>As an event management expert, I follow a comprehensive and structured process to ensure that every
+          event is executed flawlessly, on time, within budget, and tailored to meet the unique needs of my
+          clients. Here is an overview of my approach:</p>
+        <button>Our Recent works</button>
+        <img src="https://i.pinimg.com/564x/fa/3c/2e/fa3c2ea97515a176c60971ed59a1f7e9.jpg" alt="">
+      </div>
+      <div>
+        <div class="process-card">
+          <img src="https://www.svgrepo.com/show/418129/discovery.svg" alt="">
+          <div>
+            <h1>Discovery</h1>
+            <p>In the discovery phase, we immerse ourselves in understanding your event vision. We gather
+              crucial details about your goals, target audience, and expectations, laying the foundation
+              for a well-defined event scope and objectives.</p>
+          </div>
+        </div>
+        <div class="process-card">
+          <img src="https://www.svgrepo.com/show/418008/edit.svg" alt="">
+          <div>
+            <h1>Planning</h1>
+            <p>During the planning phase, we meticulously outline every aspect of your event, from logistics
+              to timelines. This phase ensures that all components align with your vision and objectives,
+              setting the stage for seamless execution.</p>
+          </div>
+        </div>
+        <div class="process-card">
+          <img src="https://www.svgrepo.com/show/418017/edit-2.svg" alt="">
+          <div>
+            <h1>Design</h1>
+            <p>Our design phase brings your event to life visually. We focus on creating an aesthetic that
+              resonates with your brand and captivates your audience, ensuring every detail is carefully
+              crafted to enhance the overall experience.</p>
+          </div>
+        </div>
+        <div class="process-card">
+          <img src="https://www.svgrepo.com/show/507383/pencil.svg" alt="">
+          <div>
+            <h1>Development</h1>
+            <p>In the development phase, we execute the plan, coordinating with vendors, managing resources,
+              and ensuring that every element is in place. Our team works diligently to bring your event
+              vision to reality.</p>
+          </div>
+        </div>
+        <div class="process-card">
+          <img src="https://www.svgrepo.com/show/529988/test-tube.svg" alt="">
+          <div>
+            <h1>Testing</h1>
+            <p>The testing phase is where we fine-tune every aspect, conducting thorough checks to ensure
+              everything runs smoothly on the day of the event. We identify and address any potential
+              issues to guarantee success.</p>
+          </div>
+        </div>
+        <div class="process-card">
+          <img src="https://www.svgrepo.com/show/461791/launch.svg" alt="">
+          <div>
+            <h1>Launch</h1>
+            <p>The launch phase is the culmination of our efforts. We manage the live event, ensuring
+              everything proceeds as planned. Our team is on-site to handle any last-minute adjustments,
+              delivering an unforgettable experience.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <main id="contact-us">
+    <h1 style="text-align: center;">Contact us</h1>
+    <div style="overflow-y: hidden;">
+      <div style="margin-bottom: -70px;" data-aidaform-widget="form-2019-12"
+        data-url="https://aiufab.aidaform.com/contact-us-dark" data-width="100%" data-height="500px" data-do-resize>
+      </div>
+    </div>
+    <script>(function () { var r, d = document, gt = d.getElementById, cr = d.createElement, tg = d.getElementsByTagName, id = "aidaform-embed"; if (!gt.call(d, id)) { r = cr.call(d, "script"); r.id = id; r.src = "https://embed.aidaform.com/embed.js"; (d.head || tg.call(d, "head")[0]).appendChild(r); } })()</script>
+  </main>
+
+  <footer>
+    <h1>Ready to elevate your brand<br>through immersive experiences?<br><br>Let's make it happen✨</h1>
+    <nav><a href="#contact-us"><button>Start a project</button></a></nav>
+    <hr>
+    <div class="footer-contacts">
+      <div>
+        <p class="faded-txt">Connect</p><br>
+        <div id="contact-container">
+          <!-- Contact email will be dynamically loaded here -->
+          <a href="mailto:jhdav@gmail.com">ABCD@gmail.com</a>
+        </div>
+      </div>
+      <div>
+        <p class="faded-txt">Follow</p><br>
+        <div class="footer-icons" id="footer-icons-container" style="display: flex;">
+          <a href="https://x.com/home"><img
+              src="https://upload.wikimedia.org/wikipedia/commons/5/53/X_logo_2023_original.svg" alt="X Logo"></a><a
+            href="https://www.linkedin.com/in/"><img
+              src="https://www.svgrepo.com/show/25824/linked-in-logo-of-two-letters.svg" alt="LinkedIn Logo"></a><a
+            href="https://www.instagram.com/"><img src="https://www.svgrepo.com/show/495405/instagram.svg"
+              alt="Instagram Logo"></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Get all navigation links
+    const navLinks = document.querySelectorAll('nav a');
+
+    // Add click event listeners to each link
+    navLinks.forEach(link => {
+      link.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent default link behavior
+
+        // Get the target main section ID
+        const targetId = this.getAttribute('href').substring(1);
+
+        // Hide all main sections
+        document.querySelectorAll('main').forEach(section => {
+          section.classList.remove('active');
+        });
+
+        // Show the target main section
+        document.getElementById(targetId).classList.add('active');
+
+        // Scroll to the top
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth' // Optional: adds a smooth scrolling effect
+        });
+      });
+    });
+  </script>
+
+
+</body>
+
+</html>
